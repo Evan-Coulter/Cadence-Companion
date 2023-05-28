@@ -1,4 +1,4 @@
-import getAccessToken from "../src/getToken"
+import getAccessToken from "../middleware/getToken"
 import CCSearchRequest from "../models/CCSearchRequest"
 import { Request, Response } from 'express';
 import axios from 'axios';
@@ -15,7 +15,7 @@ export async function fetchSearchIds(req: Request, res: Response) {
     //Create auth header with access token.
     let config = {
       headers: { 
-        'Authorization': `Bearer ${getAccessToken()?.access_token}`
+        'Authorization': `Bearer ${getAccessToken().access_token}`
       }
     }
     //Get search results from spotify server.
@@ -39,7 +39,7 @@ export async function fetchSearchIds(req: Request, res: Response) {
     }
   } catch (error) {
     const message = 'internal server had an error'
-    console.log(`${message}`)
+    console.log(`${message} + ${req}`)
     res.status(500).send({message})
   }
 }
@@ -49,7 +49,7 @@ export async function fetchSearchRecommendations(req: Request, res: Response) {
     const id = req.params.id
     let config = {
       headers: { 
-        'Authorization': `Bearer ${getAccessToken()?.access_token}`
+        'Authorization': `Bearer ${getAccessToken().access_token}`
       }
     };
     const response = await axios.get(`https://api.spotify.com/v1/recommendations?seed_tracks=${id}`, config)
@@ -71,7 +71,8 @@ export async function fetchSearchRecommendations(req: Request, res: Response) {
       res.status(500).send({message})
     }
   } catch (error) {
-    console.log(error)
-    res.sendStatus(400)
+    const message = 'internal server had an error'
+    console.log(`${message} + ${req}`)
+    res.status(500).send({message})
   }
 }

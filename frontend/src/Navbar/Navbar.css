@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Rubik One';
+  src: url('../fonts/RubikOne-Regular.ttf') format('woff'),
+        url('../fonts/RubikOne-Regular.woff2') format('woff2'),
+        url('../fonts/RubikOne-Regular.ttf') format('truetype');
+}  
+
+.navbar {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: green;
+}
+
+.navbar_start_content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+
+.navbar_logo {
+  max-width: 115px;
+  max-height: 32px;
+}
+
+.navbar_title {
+  font-family: 'Rubik One', monospace;
+  font-weight: 200;
+  font-size: 32px;
+  margin: 0px;
+  padding: 0px;
+  color: #FEFAF8;
+  position: relative;
+}
+
+.navbar_title::before {
+  content: 'Discover your rhythm with';
+  font-family: 'Roboto Mono', monospace;
+  position: absolute;
+  bottom: 35px;
+  color: #54758B;
+  font-size: 14px;
+}
+
+@media (width <= 950px) {
+  .navbar_title {
+    display: none;
+  }
+  .navbar_title::before {
+    display: none;
+  }
+}

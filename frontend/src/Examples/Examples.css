@@ -1,0 +1,59 @@
+.examples {
+  width: 100%;
+  margin: auto;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.examples_inner {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.examples_header {
+  color: #54758B;
+  font-size: 24px;
+}
+
+.examples_inner_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 90%;
+  margin: auto;
+  padding: 0;
+}
+
+.example {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  color: #54758B;
+  margin-right: auto;
+}
+
+.example:hover{
+  cursor: pointer;
+  color: wheat;
+}
+
+.example_title {
+  font-size: 24px;
+  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+  text-decoration: bold;
+}
+
+.example_artist {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}

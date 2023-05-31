@@ -19,6 +19,10 @@
   font-family: 'Roboto Mono', monospace;  
 }
 
+.search_bar:hover {
+  border: 1px solid wheat;
+}
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #54758B;
   opacity: 1; /* Firefox */
@@ -29,13 +33,11 @@
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: #54758B;
   font-size: 20px;
-  font-size: 20px;
   position: relative;
   font-family: 'Roboto Mono', monospace;
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: #54758B;
-  font-size: 20px;
   font-size: 20px;
   position: relative;
   font-family: 'Roboto Mono', monospace;

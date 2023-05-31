@@ -1,14 +1,12 @@
-import Logo from "./CCLogo"
+import CCLogo from "./CCLogo"
 import GithubLogo from "./GithubLogo"
 import './Navbar.css'
 
-type Props = {}
-
-const Navbar = (props: Props) => {
+const Navbar = () => {
   return (
   <section className="navbar">
     <div className="navbar_start_content">
-      <Logo className="navbar_logo"/>
+      <CCLogo className="navbar_logo"/>
       <div>
         <h1 className="navbar_title">CadenceCompanion</h1>
       </div>

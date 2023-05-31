@@ -2,7 +2,7 @@ type Props = {
   className: string
 }
 
-const Logo = ({className} : Props) => {
+const CCLogo = ({className} : Props) => {
   return (
     <svg className={className} width="399" height="108" viewBox="0 0 399 108" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="33" y="27" width="9" height="54" rx="4.5" fill="#EE8191"/>
@@ -23,4 +23,4 @@ const Logo = ({className} : Props) => {
   )
 }
 
-export default Logo
+export default CCLogo

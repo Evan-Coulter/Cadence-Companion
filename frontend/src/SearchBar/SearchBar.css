@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.search_bar_container {
+  width: 70%;
+  margin-top: 140px;
+}
+
+.search_bar {
+  width: 100%;
+  height: 75px;
+  background-color: #283040;
+  outline: none;
+  border: 1px solid #FEFAF8;
+  border-radius: 16px;
+  outline: 0;
+  color: #FEFAF8;
+  padding-left: 24px;
+  font-size: 20px;
+  font-family: 'Roboto Mono', monospace;  
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #54758B;
+  opacity: 1; /* Firefox */
+  font-size: 20px;
+  position: relative;
+  font-family: 'Roboto Mono', monospace;  
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #54758B;
+  font-size: 20px;
+  font-size: 20px;
+  position: relative;
+  font-family: 'Roboto Mono', monospace;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #54758B;
+  font-size: 20px;
+  font-size: 20px;
+  position: relative;
+  font-family: 'Roboto Mono', monospace;
+}

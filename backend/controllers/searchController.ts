@@ -9,9 +9,9 @@ import { SpotifyRecommendationResponse } from "../models/SpotifyRecommendationRe
 export async function fetchSearchIds(req: Request, res: Response) {
   try {
     //Get input query from user.
-    const data = req.body as CCSearchRequest
+    const query = req.params.query
     //Format query input for spotify api.
-    const formattedQuery = data.querySongName.split(" ").join("+")
+    const formattedQuery = query.split(" ").join("+")
     //Create auth header with access token.
     let config = {
       headers: { 
@@ -37,10 +37,13 @@ export async function fetchSearchIds(req: Request, res: Response) {
       console.log(`${message} \n ${response}`)
       res.status(500).send({message})
     }
-  } catch (error) {
+  } catch (error: any) {
     const message = 'internal server had an error'
     console.log(`${message} + ${req}`)
     res.status(500).send({message})
+    console.log("Error", error.stack);
+    console.log("Error", error.name);
+    console.log("Error", error.message);
   }
 }
 
@@ -70,9 +73,12 @@ export async function fetchSearchRecommendations(req: Request, res: Response) {
       console.log(`${message} \n ${response}`)
       res.status(500).send({message})
     }
-  } catch (error) {
+  } catch (error: any) {
     const message = 'internal server had an error'
     console.log(`${message} + ${req}`)
     res.status(500).send({message})
+    console.log("Error", error.stack);
+    console.log("Error", error.name);
+    console.log("Error", error.message);
   }
 }

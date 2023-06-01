@@ -42,9 +42,12 @@ export async function refreshToken(req: Request, res: Response, next: NextFuncti
       await refresh()
     }
     next()
-  } catch (error) {
+  } catch (error: any) {
     console.log(error)
     res.sendStatus(400)
+    console.log("Error", error.stack);
+    console.log("Error", error.name);
+    console.log("Error", error.message);
   }
 }
 

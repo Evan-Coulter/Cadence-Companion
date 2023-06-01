@@ -1,8 +1,8 @@
 import './SearchBar.css'
 
 type Props = {
-  searchQuery: string,
-  setSearchQuery: (value: string) => void
+  searchQuery : string
+  setSearchQuery : (value: string) => void
 }
 
 const SearchBar = ({searchQuery, setSearchQuery}: Props) => {
@@ -15,7 +15,6 @@ const SearchBar = ({searchQuery, setSearchQuery}: Props) => {
         value={searchQuery}
         name="songSearchBar"
         onChange={e=>{
-          console.log(searchQuery)
           setSearchQuery(e.target.value)
         }}/>
     </section>

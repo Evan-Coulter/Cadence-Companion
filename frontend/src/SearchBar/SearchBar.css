@@ -19,8 +19,8 @@
   font-family: 'Roboto Mono', monospace;  
 }
 
-.search_bar:hover {
-  border: 1px solid wheat;
+.search_bar:hover, .search_bar:focus {
+  border: 1px solid #EE8191;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

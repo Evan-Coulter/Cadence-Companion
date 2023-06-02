@@ -14,6 +14,7 @@ function App() {
 
   useEffect(()=>{
     clearTimeout(debounce.current)
+    //TODO: also check for blank
     if (deferredSearchQuery.length == 0 || deferredSearchQuery.includes("/")) {
       return
     }
@@ -29,10 +30,21 @@ function App() {
     }, 1000)
   }, [deferredSearchQuery])
 
+  useEffect(()=>{
+    //TODO: also check for blank
+    if (deferredSearchQuery.length == 0) {
+      setSearchResults(null)
+    }
+  }, [deferredSearchQuery])
+
   return (
+    //TODO: add error msg when user types '/'.
     <div className="app">
       <Navbar/>
-      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
+      <SearchBar 
+        searchQuery={searchQuery} 
+        setSearchQuery={setSearchQuery} 
+        searchResults={searchResults}/>
       <Examples/>
     </div>
   )

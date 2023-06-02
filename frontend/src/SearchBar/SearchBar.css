@@ -42,3 +42,14 @@
   position: relative;
   font-family: 'Roboto Mono', monospace;
 }
+
+.search_results {
+  display: flex;
+  flex-direction: column;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  max-height: 200px;
+  overflow-y: scroll;
+  background-color: #283040;
+  border: 1px solid #FEFAF8;
+}

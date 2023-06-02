@@ -1,0 +1,17 @@
+.search_result {
+  height: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search_result_p {
+  margin: 0;
+  padding: 0;
+}
+
+.search_result_img {
+  width: 52px;
+  height: 52px;
+}

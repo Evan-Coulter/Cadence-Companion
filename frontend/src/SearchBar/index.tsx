@@ -6,9 +6,10 @@ type Props = {
   searchQuery : string
   setSearchQuery : (value: string) => void
   searchResults : CCSearchResponse[] | null
+  onClickSearchResult: (searchResult: CCSearchResponse)=>void
 }
 
-const SearchBar = ({searchQuery, setSearchQuery, searchResults}: Props) => {
+const SearchBar = ({searchQuery, setSearchQuery, searchResults, onClickSearchResult}: Props) => {
   return (
     <section className='search_bar_container'>
       <input
@@ -23,7 +24,7 @@ const SearchBar = ({searchQuery, setSearchQuery, searchResults}: Props) => {
       {searchResults && (
         <div className='search_results'>
           {searchResults.map((song: CCSearchResponse)=>{
-            return <SearchResult searchResult={song}/>
+            return <SearchResult searchResult={song} onClickSearchResult={onClickSearchResult}/>
           })}
         </div>)
       }

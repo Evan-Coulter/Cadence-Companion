@@ -1,17 +1,40 @@
 .search_result {
-  height: 75px;
+  height: 80px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-top: solid 1px black;
 }
 
-.search_result_p {
+.search_result:hover {
+  background-color: #EE8191;
+  cursor: pointer;
+}
+
+.search_result_artist {
   margin: 0;
   padding: 0;
+}
+
+.search_result_title {
+  margin: 0;
+  padding: 0;
+  margin-left: 25px;
 }
 
 .search_result_img {
   width: 52px;
   height: 52px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.search_result_right_side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  margin-right: 20px;
 }

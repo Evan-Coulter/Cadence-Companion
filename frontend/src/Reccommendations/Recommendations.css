@@ -1,21 +1,19 @@
 .recommendations {
-    margin-top: 60px;
+  margin-top: 30px;
     width: 70%;
-    overflow-x: scroll;
 }
 
 .recommendations_title {
     font-weight: bold;
     font-size: 24px;
     color: #54758B;
-    position: fixed;
 }
 
 .recommendations_content {
-    margin-top: 95px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: baseline;
     gap: 40px;
     overflow-x: scroll;
+    text-align: center;
 }

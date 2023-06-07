@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-width: 200px;
+    min-width: 252px;
     min-height: 380px;
 }
 
@@ -26,14 +26,19 @@
 
 .recommendation_title {
     color: #FEFAF8;
-    font-size: 24px;
+    font-size: 20px;
     padding: 0;
     margin: 0;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .recommendation_artist {
     color: #54758B;
-    font-size: 24px;
+    font-size: 20px;
     padding: 0;
     margin: 0;
+    margin-bottom: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
 }

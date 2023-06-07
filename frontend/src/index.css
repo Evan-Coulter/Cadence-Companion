@@ -4,4 +4,6 @@ html, body {
   background-color: #2F394B;
   color: #FEFAF8;
   font-family: 'Roboto Mono', monospace;
+  margin: 0;
+  padding: 0;
 }

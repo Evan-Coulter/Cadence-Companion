@@ -12,7 +12,7 @@ const Recommendations = ({recommendations} : Props) => {
             <p className="recommendations_title">Recommendations</p>
             <div className="recommendations_content">
                 <div className="recommendations_content_spacer"></div>
-                {recommendations.map((it)=>{return <Recommendation recommendation={it}/>})}
+                {recommendations.map((it)=>{return <Recommendation recommendation={it} key={it.songId}/>})}
                 <div className="recommendations_content_spacer"></div>
             </div>
         </section>

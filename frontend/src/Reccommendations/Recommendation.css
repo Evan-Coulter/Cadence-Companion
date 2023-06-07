@@ -9,6 +9,11 @@
     min-height: 380px;
 }
 
+.recommendation:hover, .recommendation:focus {
+  border: 1px solid #EE8191;
+  cursor: pointer;
+}
+
 .recommendation_top_content {
     display: flex;
     flex-direction: column;

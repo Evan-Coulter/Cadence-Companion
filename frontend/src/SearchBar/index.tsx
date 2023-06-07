@@ -24,7 +24,7 @@ const SearchBar = ({searchQuery, setSearchQuery, searchResults, onClickSearchRes
       {searchResults && (
         <div className='search_results'>
           {searchResults.map((song: CCSearchResponse)=>{
-            return <SearchResult searchResult={song} onClickSearchResult={onClickSearchResult}/>
+            return <SearchResult searchResult={song} onClickSearchResult={onClickSearchResult} key={song.songId}/>
           })}
         </div>)
       }

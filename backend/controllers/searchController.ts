@@ -1,5 +1,4 @@
 import getAccessToken from "../middleware/getToken"
-import CCSearchRequest from "../models/CCSearchRequest"
 import { Request, Response } from 'express';
 import axios from 'axios';
 import CCSearchResponse from "../models/CCSearchResponse";
@@ -27,7 +26,8 @@ export async function fetchSearchIds(req: Request, res: Response) {
           songName: item.name,
           songId: item.id,
           artistNames: item.artists.map((artist)=>artist.name),
-          imageUrls: item.album.images.map((image)=>image.url),        
+          imageUrls: item.album.images.map((image)=>image.url),
+          spotifyUrl: item.external_urls.spotify   
         }
         return newItem
       })
@@ -63,7 +63,8 @@ export async function fetchSearchRecommendations(req: Request, res: Response) {
           songName: item.name,
           songId: item.id,
           artistNames: item.artists.map((artist)=>artist.name),
-          imageUrls: item.album.images.map((image)=>image.url),        
+          imageUrls: item.album.images.map((image)=>image.url),     
+          spotifyUrl: item.external_urls.spotify   
         }
         return newItem
       })

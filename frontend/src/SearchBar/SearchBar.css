@@ -102,3 +102,10 @@
 .search_results::-webkit-scrollbar-track {
   background: transparent;
 }
+
+.search_bar_error {
+  color: #EE8191;
+  width: 100%;
+  text-align: start;
+  padding-left: 24px;
+}

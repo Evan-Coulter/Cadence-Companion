@@ -1,3 +1,4 @@
+import { useDeferredValue, useEffect, useState } from 'react'
 import CCSearchResponse from '../models/CCSearchResponse'
 import './SearchBar.css'
 import SearchResult from './SearchResult'
@@ -11,6 +12,17 @@ type Props = {
 }
 
 const SearchBar = ({searchQuery, setSearchQuery, searchResults, onClickSearchResult, currentRecommendationBase}: Props) => {
+  const deferredSearchQuery = useDeferredValue(searchQuery)
+  const [inputError, setInputError] = useState<boolean | null>(null)
+  useEffect (()=>{
+    if (deferredSearchQuery.includes("/")) {
+      setInputError(true)
+    } else {
+      setInputError(null)
+    }
+  }, [deferredSearchQuery])
+
+
   return (
     <section className='search_bar_container'>
       <div className='search_bar'>
@@ -28,6 +40,7 @@ const SearchBar = ({searchQuery, setSearchQuery, searchResults, onClickSearchRes
             setSearchQuery(e.target.value)
           }}/>
       </div>
+      {inputError && <p className='search_bar_error'>Please do not add '/' to the song name.</p>}
       {searchResults && (
         <div className='search_results'>
           {searchResults.map((song: CCSearchResponse)=>{

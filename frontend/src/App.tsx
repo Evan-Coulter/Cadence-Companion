@@ -52,7 +52,6 @@ function App() {
   }
 
   return (
-    //TODO: add error msg when user types '/'.
     <div className="app">
       <Navbar/>
       <SearchBar 

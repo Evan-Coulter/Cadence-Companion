@@ -17,7 +17,6 @@ function App() {
 
   useEffect(()=>{
     clearTimeout(debounce.current)
-    //TODO: also check for blank
     if (deferredSearchQuery.length == 0 || deferredSearchQuery.includes("/")) {
       return
     }
@@ -34,7 +33,6 @@ function App() {
   }, [deferredSearchQuery])
 
   useEffect(()=>{
-    //TODO: also check for blank
     if (deferredSearchQuery.length == 0) {
       setSearchResults(null)
     }

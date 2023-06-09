@@ -36,8 +36,8 @@
 }
 
 .search_bar_right_side {
-  position: relative;
-  top: 72px; 
+  position: absolute;
+  margin-top: 5px;
   gap: 24px;
   display: flex;
   flex-direction: row;
@@ -53,6 +53,7 @@
 .search_bar_right_side_img {
   width: 52px;
   height: 52px;
+  border-radius: 8px;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -78,6 +79,7 @@
 .search_results {
   display: flex;
   width: 100%;
+  margin-left: 24px;
   flex-direction: column;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;

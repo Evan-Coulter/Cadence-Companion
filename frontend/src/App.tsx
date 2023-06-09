@@ -8,6 +8,7 @@ import CCSearchResponse from './models/CCSearchResponse'
 import Recommendations from './Reccommendations'
 
 function App() {
+  const [currentRecommendationBase, setCurrentRecommendationBase] = useState<CCSearchResponse | null>(null)
   const [reccomendations, setReccomendations] = useState<CCSearchResponse[] | null>(null)
   const [searchResults, setSearchResults] = useState<CCSearchResponse[] | null>(null)
   const [searchQuery, setSearchQuery] = useState<string>('')
@@ -44,6 +45,7 @@ function App() {
     try {
       const response = await axios.get(`http://localhost:3000/search/id/${searchResult.songId}`)
       setReccomendations(response.data)
+      setCurrentRecommendationBase(searchResult)
     } catch (e) {
       console.log(e)
     }
@@ -57,8 +59,9 @@ function App() {
         searchQuery={searchQuery} 
         setSearchQuery={setSearchQuery} 
         searchResults={searchResults}
-        onClickSearchResult={onClickSearchResult}/>
-      { !reccomendations && <Examples/> }
+        onClickSearchResult={onClickSearchResult}
+        currentRecommendationBase={currentRecommendationBase}/>
+      { !reccomendations && <Examples onClickRecommendation={onClickSearchResult}/> }
       { reccomendations && <Recommendations recommendations={reccomendations}/> }
     </div>
   )

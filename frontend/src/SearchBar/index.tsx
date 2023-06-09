@@ -7,11 +7,13 @@ type Props = {
   setSearchQuery : (value: string) => void
   searchResults : CCSearchResponse[] | null
   onClickSearchResult: (searchResult: CCSearchResponse)=>void
+  currentRecommendationBase : CCSearchResponse | null
 }
 
-const SearchBar = ({searchQuery, setSearchQuery, searchResults, onClickSearchResult}: Props) => {
+const SearchBar = ({searchQuery, setSearchQuery, searchResults, onClickSearchResult, currentRecommendationBase}: Props) => {
   return (
     <section className='search_bar_container'>
+      //TODO: SHOW/HIDE currentRecommendationBase song image and artist name
       <input
         type='text'
         className="search_bar"

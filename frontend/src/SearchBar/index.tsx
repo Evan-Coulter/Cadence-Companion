@@ -13,16 +13,21 @@ type Props = {
 const SearchBar = ({searchQuery, setSearchQuery, searchResults, onClickSearchResult, currentRecommendationBase}: Props) => {
   return (
     <section className='search_bar_container'>
-      //TODO: SHOW/HIDE currentRecommendationBase song image and artist name
-      <input
-        type='text'
-        className="search_bar"
-        placeholder="Enter song title here to get recommendations." 
-        value={searchQuery}
-        name="songSearchBar"
-        onChange={e=>{
-          setSearchQuery(e.target.value)
-        }}/>
+      <div className='search_bar'>
+        {currentRecommendationBase && <div className='search_bar_right_side'>
+          <p className='search_bar_right_side_artist_name'>{currentRecommendationBase.artistNames?.at(0)}</p>
+          <img className='search_bar_right_side_img' src={currentRecommendationBase.imageUrls?.at(0)}/>
+        </div>}
+        <input
+          type='text'
+          className="search_bar_input"
+          placeholder="Enter song title here to get recommendations." 
+          value={searchQuery}
+          name="songSearchBar"
+          onChange={e=>{
+            setSearchQuery(e.target.value)
+          }}/>
+      </div>
       {searchResults && (
         <div className='search_results'>
           {searchResults.map((song: CCSearchResponse)=>{

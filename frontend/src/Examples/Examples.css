@@ -20,11 +20,11 @@
   font-size: 24px;
 }
 
-.examples_inner_content {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  width: 90%;
-  margin: auto;
-  padding: 0;
+.examples_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 20%;
+  row-gap: 50%;
 }

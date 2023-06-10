@@ -2,6 +2,7 @@ import { useDeferredValue, useEffect, useState } from 'react'
 import CCSearchResponse from '../models/CCSearchResponse'
 import './SearchBar.css'
 import SearchResult from './SearchResult'
+import LoadingSpinner from './LoadingSpinner'
 
 type Props = {
   searchQuery : string
@@ -9,9 +10,10 @@ type Props = {
   searchResults : CCSearchResponse[] | null
   onClickSearchResult: (searchResult: CCSearchResponse)=>void
   currentRecommendationBase : CCSearchResponse | null
+  loading : boolean | null 
 }
 
-const SearchBar = ({searchQuery, setSearchQuery, searchResults, onClickSearchResult, currentRecommendationBase}: Props) => {
+const SearchBar = ({searchQuery, setSearchQuery, searchResults, onClickSearchResult, currentRecommendationBase, loading}: Props) => {
   const deferredSearchQuery = useDeferredValue(searchQuery)
   const [inputError, setInputError] = useState<boolean | null>(null)
   useEffect (()=>{
@@ -27,9 +29,13 @@ const SearchBar = ({searchQuery, setSearchQuery, searchResults, onClickSearchRes
     <section className='search_bar_container'>
       <div className='search_bar'>
         {currentRecommendationBase && <div className='search_bar_right_side'>
+          <LoadingSpinner loading={loading}/>
           <p className='search_bar_right_side_artist_name'>{currentRecommendationBase.artistNames?.at(0)}</p>
           <img className='search_bar_right_side_img' src={currentRecommendationBase.imageUrls?.at(0)}/>
         </div>}
+        {/* Loading spinner need to appear when there is no current recommendation base set and
+          to the left of the recommendation if there is one set. */}
+        {!currentRecommendationBase && <div className='loading_symbol_no_base_recommendation'><LoadingSpinner loading={loading}/></div>}
         <input
           type='text'
           className="search_bar_input"

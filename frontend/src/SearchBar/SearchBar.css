@@ -125,3 +125,13 @@ select:-webkit-autofill:focus {
   text-align: start;
   padding-left: 24px;
 }
+
+.loading_symbol_no_base_recommendation {
+  position: absolute;
+  margin-top: 19px;
+  gap: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;  
+}

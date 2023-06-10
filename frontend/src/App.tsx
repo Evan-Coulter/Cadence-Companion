@@ -9,6 +9,7 @@ import Recommendations from './Reccommendations'
 
 function App() {
   const [currentRecommendationBase, setCurrentRecommendationBase] = useState<CCSearchResponse | null>(null)
+  const [loading, setLoading] = useState<boolean | null>(null)
   const [reccomendations, setReccomendations] = useState<CCSearchResponse[] | null>(null)
   const [searchResults, setSearchResults] = useState<CCSearchResponse[] | null>(null)
   const [searchQuery, setSearchQuery] = useState<string>('')
@@ -16,8 +17,10 @@ function App() {
   const debounce = useRef<number>()
 
   useEffect(()=>{
+    setLoading(true)
     clearTimeout(debounce.current)
     if (deferredSearchQuery.length == 0 || deferredSearchQuery.includes("/")) {
+      setLoading(null)
       return
     }
     debounce.current = setTimeout(async ()=>{
@@ -28,6 +31,8 @@ function App() {
         }
       } catch (e) {
         console.log(e)
+      } finally {
+        setLoading(null)    
       }
     }, 1000)
   }, [deferredSearchQuery])
@@ -40,12 +45,15 @@ function App() {
 
   const onClickSearchResult =  async (searchResult: CCSearchResponse) => {
     setSearchResults(null)
+    setLoading(true)
     try {
       const response = await axios.get(`http://localhost:3000/search/id/${searchResult.songId}`)
       setReccomendations(response.data)
       setCurrentRecommendationBase(searchResult)
     } catch (e) {
       console.log(e)
+    } finally {
+      setLoading(null)
     }
   }
 
@@ -57,7 +65,8 @@ function App() {
         setSearchQuery={setSearchQuery} 
         searchResults={searchResults}
         onClickSearchResult={onClickSearchResult}
-        currentRecommendationBase={currentRecommendationBase}/>
+        currentRecommendationBase={currentRecommendationBase}
+        loading={loading}/>
       { !reccomendations && <Examples onClickRecommendation={onClickSearchResult}/> }
       { reccomendations && <Recommendations recommendations={reccomendations}/> }
     </div>

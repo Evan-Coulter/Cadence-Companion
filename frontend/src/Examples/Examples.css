@@ -28,3 +28,21 @@
   column-gap: 20%;
   row-gap: 50%;
 }
+
+.examples_grid_small_screen {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 20%;
+  row-gap: 50%;
+}
+
+@media (width <= 950px) {
+  .examples {
+    margin-top: 65px;
+  }
+  .examples_inner {
+    gap: 20px;
+  }
+}

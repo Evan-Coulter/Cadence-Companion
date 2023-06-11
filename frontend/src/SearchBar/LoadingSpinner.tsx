@@ -9,8 +9,8 @@ const LoadingSpinner = ({loading} : Props) => {
         {loading && 
             <div>
                 <ThreeDots
-                    height="40" 
-                    width="40" 
+                    height="24" 
+                    width="24" 
                     radius="9"
                     color="#EE8191" 
                     ariaLabel="three-dots-loading"

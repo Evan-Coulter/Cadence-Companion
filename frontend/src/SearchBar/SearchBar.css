@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 .search_bar_container {
-  width: 70%;
+  width: 80%;
   margin-top: 70px;
   display: flex;
   flex-direction: column;
@@ -12,12 +12,12 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: center;
 }
 
 .search_bar_input {
-  margin: auto; 
-  width: 100%;
+  margin: auto;
+  width: 80%;
   height: 75px;
   font-weight: bold;
   background-color: #283040;
@@ -27,8 +27,19 @@
   outline: 0;
   color: #FEFAF8;
   padding-left: 24px;
+  padding-right: 24px;
   font-size: 20px;
   font-family: 'Roboto Mono', monospace;  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 1;
+}
+
+@media (width <= 950px) {
+  .search_bar_input, .search_bar_input::placeholder, .search_bar_input::-webkit-input-placeholder {
+    font-size: 16px;
+  }
 }
 
 input:-webkit-autofill,
@@ -46,30 +57,55 @@ select:-webkit-autofill:focus {
   font-family: 'Roboto Mono', monospace;  
 }
 
-
 .search_bar_input:hover, .search_bar_input:focus {
   border: 1px solid #EE8191;
 }
 
 .search_bar_right_side {
+  width: 64%;
   position: absolute;
-  margin-top: 5px;
+  margin-top: 12px;
   gap: 24px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
 }
 
 .search_bar_right_side_artist_name {
   font-weight: bold;
   font-size: 20px;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
 }
 
 .search_bar_right_side_img {
   width: 52px;
   height: 52px;
   border-radius: 8px;
+  z-index: 2;
+}
+
+@media (width <= 950px) {
+  .search_bar_right_side {
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .search_bar_right_side_artist_name {
+    font-size: 16px;
+  }
+  .search_bar_right_side_img {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+  }
+}
+
+@media (width <= 600px) {
+  .search_bar_right_side {
+    display: none;
+  }
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -94,8 +130,7 @@ select:-webkit-autofill:focus {
 
 .search_results {
   display: flex;
-  width: 100%;
-  margin-left: 24px;
+  width: 80%;
   flex-direction: column;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
@@ -126,12 +161,13 @@ select:-webkit-autofill:focus {
   padding-left: 24px;
 }
 
-.loading_symbol_no_base_recommendation {
+.loading_symbol {
+  width: 64%;
   position: absolute;
-  margin-top: 19px;
-  gap: 24px;
+  margin-top: 54px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;  
+  z-index: 3;
 }

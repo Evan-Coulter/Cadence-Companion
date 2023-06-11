@@ -16,8 +16,6 @@ type Props = {
 
 const SearchBar = ({searchQuery, setSearchQuery, searchResults, onClickSearchResult, currentRecommendationBase, loading}: Props) => {
   const matches = useMediaQuery('(min-width: 950px)')
-
-
   const deferredSearchQuery = useDeferredValue(searchQuery)
   const [inputError, setInputError] = useState<boolean | null>(null)
   useEffect (()=>{
@@ -36,8 +34,6 @@ const SearchBar = ({searchQuery, setSearchQuery, searchResults, onClickSearchRes
           <p className='search_bar_right_side_artist_name'>{currentRecommendationBase.artistNames?.at(0)}</p>
           <img className='search_bar_right_side_img' src={currentRecommendationBase.imageUrls?.at(0)}/>
         </div>}
-        {/* Loading spinner need to appear when there is no current recommendation base set and
-          to the left of the recommendation if there is one set. */}
         <div className='loading_symbol'><LoadingSpinner loading={loading}/></div>
         {matches && <input
           type='text'

@@ -171,3 +171,9 @@ select:-webkit-autofill:focus {
   align-items: center;  
   z-index: 3;
 }
+
+@media (width <= 700px) {
+  .search_results {
+    width: 90%;
+  }
+}

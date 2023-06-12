@@ -38,3 +38,13 @@
 .recommendations_content::-webkit-scrollbar-track {
   background: transparent;
 }
+
+@media (width <= 950px) {
+  .recommendations_content {
+    width: 80%;
+    gap: 12px;
+  }
+  .recommendations_title {
+    width: 80%;
+  }
+}

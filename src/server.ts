@@ -3,8 +3,9 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 // Imports
-import express, { NextFunction, Request, Response } from 'express';
+import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
+import path from "path"; 
 import { fetchSearchIds, fetchSearchRecommendations } from '../controllers/searchController';
 import { refreshToken } from '../middleware/getToken';
 
@@ -22,6 +23,7 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type")
   next()
 })
+app.use(express.static(path.join("frontend", "dist"))) 
 const port = process.env.PORT
 app.listen(port, () => { console.log(`Server is running on port ${port}`); });
 
@@ -29,3 +31,6 @@ app.listen(port, () => { console.log(`Server is running on port ${port}`); });
 app.get('/', (req: Request, res: Response) => { res.send('Hello, Express with TypeScript!'); });
 app.get('/search/:query', refreshToken, fetchSearchIds)
 app.get('/search/id/:id', refreshToken, fetchSearchRecommendations)
+app.use((req, res, next) => {
+  res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html")) 
+}) 

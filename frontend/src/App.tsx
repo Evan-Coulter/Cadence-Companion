@@ -23,7 +23,7 @@ function App() {
       setLoading(null)
       return
     }
-    debounce.current = setTimeout(async ()=>{
+    debounce.current = window.setTimeout(async ()=>{
       try {   
         const response = await axios.get(`http://localhost:3000/search/${deferredSearchQuery}`)
         if (response.status == 200) {

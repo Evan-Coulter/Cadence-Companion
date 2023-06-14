@@ -3,8 +3,7 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 // Imports
-import express, { Request, Response } from 'express';
-import cors from 'cors';
+import express, { NextFunction, Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import { fetchSearchIds, fetchSearchRecommendations } from '../controllers/searchController';
 import { refreshToken } from '../middleware/getToken';
@@ -16,7 +15,13 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.json())
-app.use(cors())
+// Set CORS header
+app.use((req, res, next) => {
+  res.setHeader("Access-control-Allow-Origin", "*")
+  res.setHeader("Access-Control-Allow-Methods", "GET")
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type")
+  next()
+})
 const port = process.env.PORT
 app.listen(port, () => { console.log(`Server is running on port ${port}`); });
 

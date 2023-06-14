@@ -28,6 +28,7 @@
 .navbar_title {
   font-family: 'Rubik One', monospace;
   font-weight: 200;
+  width: 300px;
   font-size: 32px;
   margin: 0px;
   padding: 0px;
@@ -36,7 +37,7 @@
 }
 
 .navbar_title::before {
-  content: 'Discover your rhythm with';
+  content: 'Find your rhythm with';
   font-family: 'Roboto Mono', monospace;
   position: absolute;
   bottom: 35px;

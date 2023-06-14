@@ -11,11 +11,11 @@ const Navbar = () => {
         className="navbar_logo"
         src={CCLogo}/>
       <div>
-        <h1 className="navbar_title">CadenceCompanion</h1>
+        <h1 className="navbar_title">SongScout</h1>
       </div>
     </div>
     <div>
-      <a href="https://github.com/Evan-Coulter/Cadence-Companion">
+      <a href="https://github.com/Evan-Coulter/Song-Scout">
         <img 
           className="github_logo" 
           src={GithubLogo}

@@ -24,7 +24,7 @@ app.use((req, res, next) => {
   next()
 })
 app.use(express.static(path.join("frontend", "dist"))) 
-const port = process.env.PORT
+const port = process.env.PORT || 8080
 app.listen(port, () => { console.log(`Server is running on port ${port}`); });
 
 // Routing 

@@ -7,7 +7,7 @@ import axios from 'axios'
 import CCSearchResponse from './models/CCSearchResponse'
 import Recommendations from './Reccommendations'
 
-const baseURL = 'http://localhost:3000'
+const baseURL = 'http://localhost:8080'
 
 function App() {
   const [currentRecommendationBase, setCurrentRecommendationBase] = useState<CCSearchResponse | null>(null)

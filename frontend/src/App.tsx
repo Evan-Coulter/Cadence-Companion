@@ -7,6 +7,8 @@ import axios from 'axios'
 import CCSearchResponse from './models/CCSearchResponse'
 import Recommendations from './Reccommendations'
 
+const baseURL = 'http://localhost:3000'
+
 function App() {
   const [currentRecommendationBase, setCurrentRecommendationBase] = useState<CCSearchResponse | null>(null)
   const [loading, setLoading] = useState<boolean | null>(null)
@@ -25,7 +27,7 @@ function App() {
     }
     debounce.current = window.setTimeout(async ()=>{
       try {   
-        const response = await axios.get(`http://localhost:3000/search/${deferredSearchQuery}`)
+        const response = await axios.get(`${baseURL}/search/${deferredSearchQuery}`)
         if (response.status == 200) {
           setSearchResults(response.data as CCSearchResponse[])
         }
@@ -47,7 +49,7 @@ function App() {
     setSearchResults(null)
     setLoading(true)
     try {
-      const response = await axios.get(`http://localhost:3000/search/id/${searchResult.songId}`)
+      const response = await axios.get(`${baseURL}/search/id/${searchResult.songId}`)
       setReccomendations(response.data)
       setCurrentRecommendationBase(searchResult)
     } catch (e) {

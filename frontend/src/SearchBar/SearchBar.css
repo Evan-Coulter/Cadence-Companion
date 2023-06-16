@@ -87,7 +87,7 @@ select:-webkit-autofill:focus {
   z-index: 2;
 }
 
-@media (width <= 950px) {
+@media (max-width: 950px) {
   .search_bar_right_side {
     gap: 16px;
     margin-top: 20px;
@@ -102,7 +102,7 @@ select:-webkit-autofill:focus {
   }
 }
 
-@media (width <= 600px) {
+@media (max-width: 600px) {
   .search_bar_right_side {
     display: none;
   }
@@ -172,7 +172,7 @@ select:-webkit-autofill:focus {
   z-index: 3;
 }
 
-@media (width <= 700px) {
+@media (max-width: 700px) {
   .search_results {
     width: 90%;
   }

@@ -45,7 +45,7 @@
   font-size: 14px;
 }
 
-@media (width <= 950px) {
+@media (max-width: 950px) {
   .navbar_title {
     display: none;
   }

@@ -54,7 +54,7 @@
     margin-left: 20px;
 }
 
-@media (width <= 950px) {
+@media (max-width: 950px) {
   .recommendation {
     min-width: 140px;
     min-height: 270px;

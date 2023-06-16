@@ -41,7 +41,7 @@
   margin-right: 20px;
 }
 
-@media (width <= 700px) {
+@media (max-width: 700px) {
   .search_result_right_side {
     margin-left: 10px;
     gap: 6px;

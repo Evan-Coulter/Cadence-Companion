@@ -38,7 +38,7 @@
   row-gap: 50%;
 }
 
-@media (width <= 950px) {
+@media (max-width: 950px) {
   .examples {
     margin-top: 65px;
   }

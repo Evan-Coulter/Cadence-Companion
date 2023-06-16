@@ -11,8 +11,8 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build-client": "npm run build --prefix frontend",
     "tsc": "tsc -p tsconfig.json",
-    "build-and-deploy": "rm -rf frontend/dist; rm -rf dist; npm run build-client; npm run tsc; cp -r frontend/dist/ dist/src/frontend; node dist/src/server.js",
-    "build-and-deploy-pm2": "rm -rf frontend/dist; rm -rf dist; npm run build-client; npm run tsc; cp -r frontend/dist/ dist/src/frontend; pm2 start dist/src/server.js"
+    "build-and-deploy": "rm -rf frontend/dist; rm -rf dist; npm run build-client; npm run tsc; cp -r frontend/dist/ dist/frontend; node dist/src/server.js",
+    "build-and-deploy-pm2": "rm -rf frontend/dist; rm -rf dist; npm run build-client; npm run tsc; cp -r frontend/dist/ dist/frontend; pm2 start dist/src/server.js"
 
   },
   "keywords": [],

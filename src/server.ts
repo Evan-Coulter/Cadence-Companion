@@ -32,5 +32,5 @@ app.get('/', (req: Request, res: Response) => { res.send('Hello, Express with Ty
 app.get('/search/:query', refreshToken, fetchSearchIds)
 app.get('/search/id/:id', refreshToken, fetchSearchRecommendations)
 app.use((req, res, next) => {
-  res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html")) 
+  res.sendFile(path.resolve(__dirname, "..", "frontend", "index.html")) 
 }) 
